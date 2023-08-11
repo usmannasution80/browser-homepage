@@ -12,10 +12,10 @@ export default {
     if(value === undefined)
       return window.localStorage.getItem(key);
     window.localStorage.setItem(key, value);
-    this.render();
+    window.dispatchEvent(new Event('storage'));
   },
   dstrg(key){
     window.localStorage.removeItem(key);
-    this.render();
+    window.dispatchEvent(new Event('storage'));
   }
 }
